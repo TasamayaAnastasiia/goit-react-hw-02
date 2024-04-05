@@ -1,0 +1,11 @@
+h1 {
+  font-weight: 800;
+}
+ul {
+  list-style-type: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+button {
+  cursor: pointer;
+}
