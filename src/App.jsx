@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Description from './components/Description/Description.jsx';
-import Option from './components/Option/Option.jsx';
+import Options from './components/Options/Options.jsx';
 import Feedback from './components/Feedback/Feedback.jsx';
 import Notification from './components/Notification/Notification.jsx'
 import './App.css';
@@ -28,8 +28,6 @@ function App() {
       }));
     };  
 
-  const [showNotification, setShowNotification] = useState(false);
-
     const handleReset = () => {
       localStorage.removeItem('feedback');
       setFeedback({ 
@@ -37,13 +35,12 @@ function App() {
         neutral: 0,
         bad: 0 
       });
-      setShowNotification(true); 
     };
 
   return (
     <>
       <Description/>
-      <Option onClick={updateFeedback} onReset={handleReset} value={totalFeedback}/>
+      <Options onClick={updateFeedback} onReset={handleReset} value={totalFeedback}/>
       { totalFeedback > 0 ? 
         <Feedback good={feedback.good} neutral={feedback.neutral} bad={feedback.bad} total={totalFeedback} percent={Math.round((feedback.good/totalFeedback)*100)}/> : <Notification/>
       }

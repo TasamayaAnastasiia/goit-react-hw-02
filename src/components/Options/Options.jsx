@@ -1,6 +1,6 @@
-import style from './Option.module.css';
+import style from './Options.module.css';
 
-const Option = ({onClick, onReset, value}) => {
+const Options = ({onClick, onReset, value}) => {
     return (
         <div className={style.cntBox}>
             <button onClick={() => onClick('good')} type="button" className={style.good}>Good</button>
@@ -10,4 +10,4 @@ const Option = ({onClick, onReset, value}) => {
         </div>
     );
 }
-export default Option;
+export default Options;
